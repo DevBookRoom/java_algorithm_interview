@@ -1,6 +1,12 @@
 import java.util.*;
-
 public class No5 {
+
+    public static void main(String[] args) {
+        SolutionNo5 solutionNo5 = new SolutionNo5();
+        solutionNo5.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"});
+    }
+}
+class SolutionNo5 {
     public List<List<String>> groupAnagrams(String[] strs) {
         Map<String, List<String>> results = new HashMap<>();
 
@@ -17,6 +23,7 @@ public class No5 {
             // 키에 해당하는 리스트에 추가
             results.get(key).add(s);
         }
+        System.out.println(results.values());
         return new ArrayList<>(results.values());
     }
 }

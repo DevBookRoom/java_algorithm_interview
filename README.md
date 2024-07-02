@@ -8,42 +8,35 @@
 
 ---
 
-## 👨‍🏫 Reader 👩‍🏫
+## 👨‍🏫 스터디원 👩‍🏫
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/user1">
-        <img src="https://avatars.githubusercontent.com/u/33937365?v=4" width="100px;" alt=""/>
+      <a href="https://github.com/saysuhyun">
+        <img src="https://avatars.githubusercontent.com/u/172836819?v=4" width="100px;" alt=""/>
         <br />
-        <sub>user1</sub>
+        <sub>🌟최수현</sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/user2">
-        <img src="https://avatars.githubusercontent.com/u/53260922?v=4" width="100px;" alt=""/>
+      <a href="https://github.com/oo-ni">
+        <img src="https://avatars.githubusercontent.com/u/69147082?v=4" width="100px;" alt=""/>
         <br />
-        <sub>🐯user2</sub>
+        <sub>윤건우</sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/user3">
-        <img src="https://avatars.githubusercontent.com/u/50071076?v=4" width="100px;" alt=""/>
+      <a href="https://github.com/39roc">
+        <img src="https://avatars.githubusercontent.com/u/60119867?v=4" width="100px;" alt=""/>
         <br />
-        <sub>user3</sub>
+        <sub>정상구</sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/user3">
-        <img src="https://avatars.githubusercontent.com/u/50071076?v=4" width="100px;" alt=""/>
+      <a href="https://github.com/simmini">
+        <img src="https://avatars.githubusercontent.com/u/77092838?v=4" width="100px;" alt=""/>
         <br />
-        <sub>user4</sub>
-      </a>
-    </td>
-    <td align="center">
-      <a href="https://github.com/user3">
-        <img src="https://avatars.githubusercontent.com/u/50071076?v=4" width="100px;" alt=""/>
-        <br />
-        <sub>user4</sub>
+        <sub>심정민</sub>
       </a>
     </td>
   </tr>
