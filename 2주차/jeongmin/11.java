@@ -1,36 +1,21 @@
-//[LeetCode 23] Merge K Sorted Lists - 우선순위 큐
-
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
-class Solution {
-    public ListNode mergeKLists(ListNode[] lists) {
-        //queue는 fifo로 먼저 들어온 데이터를 먼저 방출하는데
-        //priorityqueue는 우선순위가 높은 것부터 선출
-        PriorityQueue<Integer> pq=new PriorityQueue<>();
-
-        for(ListNode list:lists){
-            while(list!=null){
-                pq.add(list.add);
-                list=list.next;
-            }
+public class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int[] result = new int[nums.length];
+        // 왼쪽 곱셈
+        int p = 1;
+        for (int i = 0; i < nums.length; i++) {
+            result[i] = p;
+            // 왼쪽 곱셈 결과
+            p *= nums[i];
         }
-        ListNode head=new ListNode(0);
-        ListNode next=head;
-
-        while(!pq.isEmpty()){
-            int i=pq.poll();//가장 앞에 있는 데이터를 꺼내서 return 하고 삭제
-            next.next=new ListNode(i);
-            next=next.next;
+        // 오른쪽 곱셈을 왼쪽 곱셈 결과에 차례대로 곱하기
+        p = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            // 왼쪽 곱셈 결과에 차례대로 곱한 최종 결과
+            result[i] *= p;
+            // 오른쪽 곱셈 결과
+            p *= nums[i];
         }
-        return head.next;
-
+        return result;
     }
 }

@@ -1,31 +1,51 @@
-//[Leetcode 234] Palindrome Linked List
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+import java.util.Arrays;
+
+
+
 class Solution {
-    public boolean isPalindrome(ListNode head) {
+    public List<List<Integer>> threeSum(int[] nums) {
 
-        Stack<Integer> st=new Stack<>();
-        ListNode node=head;
-        while(node!=null){//Listnode->stack에 복사해서 넣음
-            st.add(node.val);
-            node=node.next;
-        }
-        while(head!=null){//연결리스트를 앞에서 부터 이동하면서 값을 조회,스택은 뒤에서 부터 값을 빼면서 비교
-            if(head.val!=st.pop()){
-                return false;
+        int left, right, sum;
+        List<List<Integer>> results = new ArrayList<>();
+
+        // 배열 정렬
+        Arrays.sort(nums);
+
+        // 간격 조절용 left, right 초기화 , 투 포인트 개념 활용
+        for (int i = 0; i < nums.length; i++) {
+
+            // 중복값 제거
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
             }
-            head=head.next;
+
+            left = i + 1;
+            right = nums.length - 1;
+
+            while (left < right) {
+                sum = nums[i] + nums[left] + nums[right];
+
+                if (sum < 0) {
+                    left += 1;
+                } else if (sum > 0) {
+                    right -= 1;
+                } else {
+                    // sum = 0인 경우
+                    results.add(Arrays.asList(nums[i], nums[left], nums[right]));
+
+                    // 중복값 건너뛰기
+                    while (left < right && nums[left] == nums[left + 1]) {
+                        left += 1;
+                    }
+                    while (left < right && nums[right] == nums[right - 1]) {
+                        right -= 1;
+                    }
+                    left += 1;
+                    right -= 1;
+                }
+            }
+
         }
-        return true;
-
-
+        return results;
     }
 }
