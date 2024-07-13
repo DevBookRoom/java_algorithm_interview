@@ -10,6 +10,7 @@ import java.math.BigInteger;
  * }
  */
 class Solution {
+
     public ListNode reverseList(ListNode head){
         ListNode prev=null,node=head;
         while(node!=null){
