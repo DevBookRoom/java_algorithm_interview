@@ -2,7 +2,7 @@
 class Solution {
     public void dfs(List<List<Integer>>results,LinkedList<Integer>elements,int n,int start,int k){
         if(k==0){
-            //자바 8+의 스트림을 이용해 elements의 내용을 결과에 삽입
+            // elements의 내용을 리스트형태로 결과에 삽입
             results.add(elements.stream().collect(Collectors.toList()));
             return ;
         }//n=5,k=3
@@ -11,7 +11,7 @@ class Solution {
             elements.add(i);
             //재귀 dfs
             dfs(results,elements,n,i+1,k-1);
-            //돌아온 이후에는 마지막엘리먼트 삭제
+            //재귀 돌아온 이후에는 마지막엘리먼트 삭제
             elements.removeLast();
 
         }

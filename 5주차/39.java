@@ -18,7 +18,7 @@ class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         //결과 저장리스트
         List<List<Integer>> results=new ArrayList<>();
-        //dfs시작
+        //dfs시작 cand=[2,3,5,8] , target=8
         dfs(results,candidates,target,0,new ArrayDeque<>());
         return results;
     }
