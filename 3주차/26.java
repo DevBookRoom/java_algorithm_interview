@@ -1,90 +1,59 @@
-class MyCircularDeque {
+class MyCircularQueue {
+    //이중 연결 리스트로 사용할 클래스 선언
     static class DoublyLinkedList{
+        //왼쪽으로 연결할 이중 연결 리스트
         DoublyLinkedList left;
+        //오른쪽으로 연결할 이중 연결 리스트
         DoublyLinkedList right;
         int val;
-        public DoublyLinkedList(int val){
-            this.val=val;
-        }
+    }
+    public DoublyLinkedList(int val){
+        this.val=val;
+    }
+    int len;//현재 큐의 크기
+    int k;//전체 큐의 크기
+    DoublyLinkedList head;//이중 연결 리스트 head 노드
+    DoublyLinkedList tail;//이중 연결 리스트 tail 노드
+    public MyCircularQueue(int k) {
+        //아중 연결 리스트 2개 생성
+        head=new DoublyLinkedList(0);
+        tail=new DoublyLinkedList(0);
+
+        //서로연결
+        head.right=tail;
+        tail.left=head;
+
+        //전체 큐의 크기 지정
+        this.k=k;
+
+        //현재 큐의 크기 지정
+        this.len=0;
     }
 
-
-    public MyCircularDeque(int k) {
-        int len;
-        int k;
-        DoublyLinkedList head;
-        DoublyLinkedList tail;
-
-        public MyCircularDeque(int k){
-            head=new DoublyLinkedList(0);
-            tail=new DoublyLinkedList(0);
-            head.right=tail;
-            tail.left=head;
-            this.k=k;
-            this.len=0;
-        }
-
-    }
-
-    public boolean insertFront(int value) {
-        if(isFull()) return false;
-        DoublyLinkedList node=new DoublyLinkedList(value);
-        node.left=tail.left;
-        node.right=tail;
-
-        tail.left.right=node;
-        tail.left=node;
-        len++;
-        return true;
-    }
-
-    public boolean insertLast(int value) {
-        if(isFull()){
-            return false;
-        }
-        DoublyLinkedList node=new DoublyLinkedList(value);
-        node.left=tail.left;
-        node.right=tail;
-        tail.left.right=node;
-        tail.left=node;
-        len++;
-        return true;
-    }
-
-    public boolean deleteFront() {
+    public boolean enQueue(int value) {
 
     }
 
-    public boolean deleteLast() {
+    public boolean deQueue() {
 
     }
 
-    public int getFront() {
+    public int Front() {
 
     }
 
-    public int getRear() {
+    public int Rear() {
 
     }
 
     public boolean isEmpty() {
-
+        //현재 큐의 크기가 0이면 비어있음
+        return len==0;
     }
 
     public boolean isFull() {
-
+        //현재 큐의 크기가 처음 선언한 큐의 크기와 일치하면 꽉차 있음
+        return len==k;
     }
 }
 
-/**
- * Your MyCircularDeque object will be instantiated and called as such:
- * MyCircularDeque obj = new MyCircularDeque(k);
- * boolean param_1 = obj.insertFront(value);
- * boolean param_2 = obj.insertLast(value);
- * boolean param_3 = obj.deleteFront();
- * boolean param_4 = obj.deleteLast();
- * int param_5 = obj.getFront();
- * int param_6 = obj.getRear();
- * boolean param_7 = obj.isEmpty();
- * boolean param_8 = obj.isFull();
- */
